@@ -3,6 +3,7 @@
 import * as Hapi from '@hapi/hapi';
 import * as crypto from 'crypto';
 import puppeteer from 'puppeteer-core';
+import chromium from '@sparticuz/chromium'
 
 
 // Create a hash from a string
@@ -53,16 +54,23 @@ const init = async () => {
           const { url } = request.query;
             
           console.log(url)
+          chromium.setGraphicsMode = false
+           const browser = await puppeteer.launch({
+              args: chromium.args,
+              defaultViewport: chromium.defaultViewport,
+              executablePath: await chromium.executablePath(),
+              headless: chromium.headless,
+            })
           // Launch a new browser instance
-          const browser = await puppeteer.launch({executablePath: "/bin/google-chrome",
-            args: ['--disable-gpu',
-            '--disable-dev-shm-usage',
-            '--disable-setuid-sandbox',
-            '--no-first-run',
-            '--no-sandbox',
-            '--no-zygote',
-            '--single-process',]
-        });
+        //   const browser = await puppeteer.launch({executablePath: "/bin/google-chrome",
+        //     args: ['--disable-gpu',
+        //     '--disable-dev-shm-usage',
+        //     '--disable-setuid-sandbox',
+        //     '--no-first-run',
+        //     '--no-sandbox',
+        //     '--no-zygote',
+        //     '--single-process',]
+        // });
     
           // Create a new page
           const page = await browser.newPage();

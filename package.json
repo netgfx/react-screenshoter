@@ -17,7 +17,8 @@
   "license": "MIT",
   "dependencies": {
     "@hapi/hapi": "21.3.2",
-    "puppeteer-core": "^22.0.0",
-    "puppeteer": "22.0.0"
+    "@sparticuz/chromium": "^121.0.0",
+    "puppeteer": "22.0.0",
+    "puppeteer-core": "^22.0.0"
   }
 }
