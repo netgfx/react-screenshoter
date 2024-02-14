@@ -1,0 +1,22 @@
+{
+  "name": "testapi",
+  "version": "1.0.0",
+  "description": "a test local api",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "docker",
+    "hapi"
+  ],
+  "author": "MDobekidis",
+  "license": "MIT",
+  "dependencies": {
+    "@hapi/hapi": "21.3.2",
+    "puppeteer-core": "^22.0.0",
+    "puppeteer": "22.0.0"
+  }
+}
