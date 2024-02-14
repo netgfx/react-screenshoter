@@ -24,8 +24,12 @@ const init = async () => {
 
     const server = Hapi.server({
         port: 3000,
-        host: '0.0.0.0'
+        host: '0.0.0.0',
+        routes: { cors: true }
     });
+
+    server.connection({ routes: { cors: true } })
+
 
     //root path
     server.route({
