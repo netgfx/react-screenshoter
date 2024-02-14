@@ -28,9 +28,6 @@ const init = async () => {
         routes: { cors: true }
     });
 
-    server.connection({ routes: { cors: true } })
-
-
     //root path
     server.route({
         method: 'GET',
