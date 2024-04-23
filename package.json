@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "a test local api",
   "type": "module",
-  "main": "index.js",
+  "main": "parser.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "node index.js"
+    "serve": "node parser.js"
   },
   "keywords": [
     "API",
@@ -16,9 +16,7 @@
   "author": "MDobekidis",
   "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "21.3.2",
-    "@sparticuz/chromium": "^121.0.0",
-    "puppeteer": "22.0.0",
-    "puppeteer-core": "^22.0.0"
+    "express": "^4.19.2",
+    "open-graph-scraper": "^6.5.1"
   }
 }
