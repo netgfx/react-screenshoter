@@ -1,5 +1,5 @@
-const express = require("express");
-const ogs = require("open-graph-scraper");
+import express from "express";
+import * as ogs from "open-graph-scraper";
 
 const app = express();
 const port = 3002;
