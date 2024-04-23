@@ -1,8 +1,11 @@
 import express from "express";
 import ogs from "open-graph-scraper";
+import cors from "cors";
 
 const app = express();
 const port = 3002;
+
+app.use(cors());
 
 app.get("/og-metadata", async (req, res) => {
   const url = req.query.url;
@@ -18,8 +21,8 @@ app.get("/og-metadata", async (req, res) => {
       .then((data) => {
         const { error, html, result, response } = data;
         console.log("error:", error); // This returns true or false. True if there was an error. The error itself is inside the result object.
-        console.log("html:", html); // This contains the HTML of page
-        console.log("result:", result); // This contains all of the Open Graph results
+        //console.log("html:", html); // This contains the HTML of page
+        console.log("result:", JSON.stringify(result)); // This contains all of the Open Graph results
         console.log("response:", response); // This contains response from the Fetch API
 
         if (error) {
@@ -28,7 +31,7 @@ app.get("/og-metadata", async (req, res) => {
             error: `Error scraping metadata ,${JSON.stringify(error)}`,
           });
         } else {
-          res.status(200).json(result);
+          return res.status(200).json(result);
         }
       })
       .catch((error) => {
@@ -49,7 +52,7 @@ app.get("/og-metadata", async (req, res) => {
     // };
   } catch (error) {
     console.error(error);
-    res
+    return res
       .status(500)
       .json({ error: `Error scraping metadata ${JSON.stringify(error)}` });
   }
