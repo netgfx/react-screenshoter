@@ -16,9 +16,10 @@
   "author": "MDobekidis",
   "license": "MIT",
   "dependencies": {
-    "@hapi/hapi": "21.3.2",
     "@sparticuz/chromium": "^121.0.0",
     "puppeteer": "22.0.0",
-    "puppeteer-core": "^22.0.0"
+    "puppeteer-core": "^22.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
   }
 }
