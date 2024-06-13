@@ -2,7 +2,6 @@
 
 import chromium from '@sparticuz/chromium';
 import puppeteer from 'puppeteer-core';
-//
 import cors from "cors";
 import express from "express";
 
